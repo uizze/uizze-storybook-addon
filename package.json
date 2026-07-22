@@ -75,7 +75,7 @@
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.44.1",
-    "vite": "^7.0.5"
+    "vite": "^7.3.5"
   },
   "peerDependencies": {
     "storybook": "^9.0.0 || ^10.0.0"
