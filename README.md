@@ -6,6 +6,10 @@
 
 The addon is free, accountless, and local. It does not transmit source, DOM, screenshots, args, story metadata, or analytics. UIZZE appears only as an explicit link after the panel has done useful work.
 
+## Try the live finish gate
+
+[Open the release-review Storybook](https://uizze.github.io/uizze-storybook-addon/?path=/story/release-review--ready) and select **UIZZE Finish Gate** in the addon panel. Switch through ready, loading, empty, error, and permission-denied stories to verify the contract against more than one polished state.
+
 ## Install
 
 ```sh
