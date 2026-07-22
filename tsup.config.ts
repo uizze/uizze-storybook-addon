@@ -15,7 +15,7 @@ export default defineConfig(async () => {
   const packageJson = (await import('./package.json', { with: { type: 'json' } })).default;
 
   const {
-    bundler: { exportEntries = [], managerEntries = [], previewEntries = [], nodeEntries = [] },
+    bundler: { exportEntries = [], managerEntries = [], nodeEntries = [] },
   } = packageJson;
 
   const commonConfig: Options = {
@@ -57,21 +57,6 @@ export default defineConfig(async () => {
       entry: managerEntries,
       platform: 'browser',
       target: 'esnext', // we can use esnext for manager entries since Storybook will bundle the addon's manager entries again anyway
-    });
-  }
-
-  /*
-   preview entries are entries meant to be loaded into the preview iframe
-   they'll have preview-specific packages externalized and they won't be usable in node
-   they'll have types generated for them so they can be imported by users when setting up Portable Stories or using CSF factories
-  */
-  if (previewEntries.length) {
-    configs.push({
-      ...commonConfig,
-      entry: previewEntries,
-      platform: 'browser',
-      target: 'esnext', // we can use esnext for preview entries since the builders will bundle the addon's preview entries again anyway
-      dts: true,
     });
   }
 
