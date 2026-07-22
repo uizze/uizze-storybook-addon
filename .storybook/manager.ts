@@ -2,6 +2,7 @@ import { addons } from 'storybook/manager-api';
 import { create } from 'storybook/theming/create';
 
 addons.setConfig({
+  selectedPanel: 'storybook-addon-uizze/panel',
   theme: create({
     base: 'light',
     brandTitle: 'UIZZE Finish Gate',
