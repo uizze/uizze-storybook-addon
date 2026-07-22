@@ -8,7 +8,7 @@ The addon is free, accountless, and local. It does not transmit source, DOM, scr
 
 ## Try the live finish gate
 
-[Open the release-review Storybook](https://uizze.github.io/uizze-storybook-addon/?path=/story/release-review--ready) and select **UIZZE Finish Gate** in the addon panel. Switch through ready, loading, empty, error, and permission-denied stories to verify the contract against more than one polished state.
+[Open the release-review Storybook with its finish contract visible](https://uizze.github.io/uizze-storybook-addon/?path=/story/release-review--ready&addonPanel=storybook-addon-uizze%2Fpanel). Switch through ready, loading, empty, error, and permission-denied stories to verify the contract against more than one polished state.
 
 ## Install
 
