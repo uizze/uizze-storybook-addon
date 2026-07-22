@@ -16,11 +16,23 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   parameters: {
-    myAddonParameter: `
-<MyComponent boolProp scalarProp={1} complexProp={{ foo: 1, bar: '2' }}>
-  <SomeOtherComponent funcProp={(a) => a.id} />
-</MyComponent>
-`,
+    uizze: {
+      screenJob: 'Let a reviewer approve or reject a release candidate without losing context.',
+      primaryAction: 'Approve release',
+      references: [
+        {
+          label: 'UIZZE release workflow reference',
+          url: 'https://uizze.com',
+          note: 'Used for hierarchy and state coverage, never copied as an asset.',
+        },
+      ],
+      requiredStates: ['ready', 'loading', 'empty', 'error', 'permission denied'],
+      forbiddenPatterns: ['Filler metrics', 'Equal-weight card grid', 'Inert secondary actions'],
+      acceptanceCriteria: [
+        'Keyboard focus reaches the primary action before secondary metadata.',
+        'Loading, empty, error, and permission states preserve the review context.',
+      ],
+    },
   },
 };
 

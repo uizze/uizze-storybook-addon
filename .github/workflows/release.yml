@@ -1,33 +1,32 @@
-name: Release
+name: Publish npm package
 
-on: [push]
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
-  release:
+  publish:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci') && github.repository != 'storybookjs/addon-kit'"
+    timeout-minutes: 15
+    environment: npm
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
-
+      - name: Checkout release
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+      - name: Use Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 20.x
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Create Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          pnpm run release
+          node-version: 20.19.0
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - name: Install exact dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Validate release source
+        run: pnpm validate
+      - name: Publish with npm provenance
+        run: pnpm publish --access public --provenance --no-git-checks

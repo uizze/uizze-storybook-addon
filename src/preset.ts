@@ -1,14 +1,3 @@
-// You can use presets to augment the Storybook configuration
-// You rarely want to do this in addons,
-// so often you want to delete this file and remove the reference to it in package.json#exports and package.json#bunder.nodeEntries
-// Read more about presets at https://storybook.js.org/docs/addons/writing-presets
-
-export const viteFinal = async (config: unknown) => {
-  console.log('This addon is augmenting the Vite config');
-  return config;
-};
-
-export const webpack = async (config: unknown) => {
-  console.log('This addon is augmenting the Webpack config');
-  return config;
-};
+// The addon is manager-only. This no-op preset intentionally changes no builder,
+// framework, preview, source, or network configuration.
+export {};

@@ -15,7 +15,7 @@ export default defineConfig(async () => {
   const packageJson = (await import('./package.json', { with: { type: 'json' } })).default;
 
   const {
-    bundler: { managerEntries = [], previewEntries = [], nodeEntries = [] },
+    bundler: { exportEntries = [], managerEntries = [], previewEntries = [], nodeEntries = [] },
   } = packageJson;
 
   const commonConfig: Options = {
@@ -31,10 +31,20 @@ export default defineConfig(async () => {
      The following packages are provided by Storybook and should always be externalized
      Meaning they shouldn't be bundled with the addon, and they shouldn't be regular dependencies either
     */
-    external: ['react', 'react-dom', '@storybook/icons'],
+    external: ['react', 'react-dom', 'storybook/manager-api'],
   };
 
   const configs: Options[] = [];
+
+  if (exportEntries.length) {
+    configs.push({
+      ...commonConfig,
+      entry: exportEntries,
+      platform: 'neutral',
+      target: 'es2022',
+      dts: true,
+    });
+  }
 
   /*
    manager entries are entries meant to be loaded into the manager UI
