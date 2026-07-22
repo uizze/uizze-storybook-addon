@@ -1,21 +1,6 @@
 import { addons } from 'storybook/manager-api';
 import { create } from 'storybook/theming/create';
 
-const titleSuffix = 'UIZZE Finish Gate';
-const keepDemoTitleBranded = () => {
-  if (document.title.endsWith(titleSuffix)) return;
-
-  const storyTitle = document.title.includes(' ⋅ ') ? document.title.split(' ⋅ ')[0] : '';
-  document.title = storyTitle ? `${storyTitle} ⋅ ${titleSuffix}` : titleSuffix;
-};
-
-new MutationObserver(keepDemoTitleBranded).observe(document.head, {
-  childList: true,
-  subtree: true,
-  characterData: true,
-});
-keepDemoTitleBranded();
-
 addons.setConfig({
   selectedPanel: 'storybook-addon-uizze/panel',
   theme: create({
