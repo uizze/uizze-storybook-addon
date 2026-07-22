@@ -36,13 +36,13 @@ const buttonStyle: React.CSSProperties = {
   padding: '9px 12px',
 };
 
-export const Panel: React.FC<PanelProps> = memo(function UizzePanel({ active }) {
+export const Panel: React.FC<PanelProps> = memo(function UizzePanel(props: PanelProps) {
   const input = useParameter<UizzeParametersInput | undefined>(PARAM_KEY);
   const contract = useMemo(() => normalizeContract(input), [input]);
   const evaluation = useMemo(() => evaluateContract(contract), [contract]);
   const [copied, setCopied] = useState(false);
 
-  if (!active) return null;
+  if (!props.active) return null;
 
   if (contract.disabled) {
     return (
