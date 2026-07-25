@@ -50,7 +50,9 @@ jobs:
       - name: Inspect the published package boundary
         run: |
           pnpm pack:check
-          tar -tf .artifacts/storybook-addon-uizze-0.1.0.tgz > .artifacts/package-files.txt
+          package_file=$(find .artifacts -maxdepth 1 -name 'storybook-addon-uizze-*.tgz' -print -quit)
+          test -n "$package_file"
+          tar -tf "$package_file" > .artifacts/package-files.txt
           grep -q 'package/dist/manager.js' .artifacts/package-files.txt
           grep -q 'package/dist/index.js' .artifacts/package-files.txt
           grep -q 'package/SECURITY.md' .artifacts/package-files.txt

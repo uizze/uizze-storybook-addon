@@ -20,13 +20,13 @@ The addon is free, accountless, and local. It does not transmit source, DOM, scr
 
 ## Install
 
-Install the public `v0.1.0` GitHub release:
+Install from npm:
 
 ```sh
-npm install --save-dev https://github.com/uizze/uizze-storybook-addon/releases/download/v0.1.0/storybook-addon-uizze-0.1.0.tgz
+npm install --save-dev storybook-addon-uizze
 ```
 
-The npm package and automatic Storybook catalog listing are pending publication. The GitHub release contains the same inspected package boundary and requires no UIZZE account.
+Or inspect and install the exact package from the matching [GitHub release](https://github.com/uizze/uizze-storybook-addon/releases).
 
 Add the package to `.storybook/main.ts`:
 
