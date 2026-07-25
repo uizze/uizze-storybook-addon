@@ -1,4 +1,4 @@
-> ***If your UI screams AI, your app is dead.***
+> **_If your UI screams AI, your app is dead._**
 
 # Stop Making UI Slop
 
