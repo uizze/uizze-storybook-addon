@@ -1,4 +1,12 @@
-# UIZZE Finish Gate for Storybook
+> ***If your UI screams AI, your app is dead.***
+
+# Stop Making UI Slop
+
+Build distinctive UI with 800,000+ real web and iOS screens via [UIZZE](https://uizze.com).
+
+![Stop Making UI Slop with UIZZE](https://uizze.com/landing/anti-ui-slop-skill-banner.png)
+
+## UIZZE Finish Gate for Storybook
 
 **STOP UI SLOP before the component library makes it permanent.**
 
