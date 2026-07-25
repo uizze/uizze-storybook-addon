@@ -1,8 +1,9 @@
 {
   "name": "storybook-addon-uizze",
-  "version": "0.1.0",
-  "description": "STOP UI SLOP with a local design-contract finish gate for every Storybook story.",
+  "version": "0.1.1",
+  "description": "STOP UI SLOP in Storybook with a local, accountless design-contract finish gate.",
   "keywords": [
+    "storybook-addons",
     "storybook-addon",
     "storybook",
     "ui-design",
@@ -15,7 +16,7 @@
     "url": "https://github.com/uizze/uizze-storybook-addon"
   },
   "license": "MIT",
-  "author": "UIZZE <hello@uizze.com> (https://uizze.com)",
+  "author": "UIZZE <business@uizze.com> (https://uizze.com)",
   "homepage": "https://uizze.com",
   "bugs": {
     "url": "https://github.com/uizze/uizze-storybook-addon/issues"
