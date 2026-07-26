@@ -8,7 +8,8 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const readme = fs.readFileSync(path.join(here, '..', 'README.md'), 'utf8');
 
 test('documents the verified GitHub release until the npm package exists', () => {
-  const archive = 'https://github.com/uizze/uizze-storybook-addon/releases/download/v0.1.1/storybook-addon-uizze-0.1.1.tgz';
+  const archive =
+    'https://github.com/uizze/uizze-storybook-addon/releases/download/v0.1.1/storybook-addon-uizze-0.1.1.tgz';
 
   assert.match(readme, new RegExp(archive.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   assert.match(readme, /v0\.1\.1\/storybook-addon-uizze-0\.1\.1\.tgz\.sha256/);
